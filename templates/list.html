@@ -15,7 +15,8 @@
     <ul>
         {% for t in todos %}
         <li>
-            {{ t.id }}: {{ t.title }}
+            {# {{ t.id }}: {{ t.title }} #}
+            {{ loop.revindex }}: {{ t.title }}
 
             <form method="post" action="{{ url_for('todos_delete', todo_id=t.id) }}" style="display:inline;">
                 <button type="submit">Delete</button>
